@@ -10,6 +10,9 @@ fn main() {
 
     println!("The secret number is: {secret_number}");
 
+    /*Part 2.4 Start - creating a game loop */
+    loop{//By typing loop{contents}, as long as a user or a program itself needs to exit out of the loop, the program keeps on running.
+        
     println!("Input your guess");
 
     let mut guess=String::new();
@@ -40,6 +43,8 @@ fn main() {
         Ordering::Equal=>println!("yay!"),
     }
     /*Added - Part 2.2 End*/
+    }
+    /*Part 2.4 End - Adding game loop */
 }
 
 /*・Things done・*/
