@@ -40,7 +40,12 @@ fn main() {
     match guess.cmp(&secret_number){ 
         Ordering::Less=>println!("Too smol"),
         Ordering::Greater=>println!("Too bic"),
-        Ordering::Equal=>println!("yay!"),
+        /*Part 2.5 quiting the game after a user guessed the correct number */
+        Ordering::Equal=>{println!("yay!");
+        break; // break; ends this program because after exiting out of the loop, main function also ends.
+        }
+
+        /*Part 2.5 End */
     }
     /*Added - Part 2.2 End*/
     }
