@@ -13,15 +13,28 @@ fn main() {
     println!("Input your guess");
 
     let mut guess=String::new();
-
+    
     io::stdin()
     .read_line(&mut guess)
     .expect("Failed to read line");
 
+/*Added - Part 2.3 Start */
+//Variable Shadowing. 
+    let guess:u32 = guess.trim().parse().expect("Please type a number");
+    //.trim() this method erases whitespace.
+    /* .parse() this method chages type of a variable in this case "string" to "u32".
+       .parse() can only change a "String" variable that can be changed into specified type. 
+       If string contains a value such as %(thumbs_up emoji), it cannot convert the value.
+    */
+    //For such a reason, .expect() method is used to handle error.
+
+
+/*Added - Part 2.3 End */
+
     println!("you guessed: {guess}");
 
     /*Added - Part 2.2 Start */
-    match guess.cmp(&secret_number){ //The compiler error: saying "guess" and "secret_number" is different types.
+    match guess.cmp(&secret_number){ 
         Ordering::Less=>println!("Too smol"),
         Ordering::Greater=>println!("Too bic"),
         Ordering::Equal=>println!("yay!"),
