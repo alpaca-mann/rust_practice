@@ -21,18 +21,17 @@ fn main() {
     .read_line(&mut guess)
     .expect("Failed to read line");
 
-/*Added - Part 2.3 Start */
-//Variable Shadowing. 
-    let guess:u32 = guess.trim().parse().expect("Please type a number");
-    //.trim() this method erases whitespace.
-    /* .parse() this method chages type of a variable in this case "string" to "u32".
-       .parse() can only change a "String" variable that can be changed into specified type. 
-       If string contains a value such as %(thumbs_up emoji), it cannot convert the value.
-    */
-    //For such a reason, .expect() method is used to handle error.
+/*Part 2.5 Start - Handling Invalid user input */
+    let guess:u32 = match guess.trim().parse() {
+        Ok(num) => num,
+        Err(_) => continue,
 
-
-/*Added - Part 2.3 End */
+        /*
+        By using "match" it will check whether .parse() returns ok() or Err(_).
+        .parse method returns Rusult Type (retuns ok or err) therefore, if the result of .parse() returns ok, it will return "num"(which contains the user input), if user types something that cannot be converted to specified type(which is u32 type), .parse() will return err variant, the game will "continue" to ask for another input.
+        */
+    };
+    /* Part 2.5 End*/
 
     println!("you guessed: {guess}");
 
