@@ -111,7 +111,7 @@ fn dangle_ok_ver() -> String{
     let s = String::from("Hello again from dangle function");
 
     s
-
+}
 //---------------------------------------------
 
 /* The Rules of References */
@@ -123,7 +123,7 @@ Let’s recap what we’ve discussed about references:
 
 Next, we’ll look at a different kind of reference: slices.
 */
-}
+
 
 //--------------------------------------------------------
 // Aux functions.
